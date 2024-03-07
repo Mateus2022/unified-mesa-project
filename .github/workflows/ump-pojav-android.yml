@@ -25,9 +25,9 @@ jobs:
 
           export ANDROID_NDK_HOME="$ANDROID_SDK_ROOT/ndk-bundle"
 
-      - name: Clone & Build DRM
+      - name: Clone & Build DRM for ${{ matrix.arch }}
         run: |
-          envsubst <android-drm-${{matrix.arch}} >build-crossfile-drm
+          envsubst <android-drm-${{ matrix.arch }} > build-crossfile-drm
           git clone --depth 1 https://gitlab.freedesktop.org/mesa/drm.git
           cd drm
 
@@ -48,9 +48,9 @@ jobs:
           ninja -C "build-android" install
           cd ..
           
-      - name: Build android-${{ matrix.arch }}
+      - name: Build Android Mesa Normal for ${{ matrix.arch }}
         run: |
-          envsubst <android-${{ matrix.arch }} >build-crossfile
+          envsubst <android-${{ matrix.arch }} > build-crossfile
           meson setup "build-android" \
             --prefix=/tmp/mesa \
             --cross-file "build-crossfile" \
@@ -73,9 +73,9 @@ jobs:
             
           ninja -C "build-android" install
 
-      - name: Build android-turnip-${{ matrix.arch }}
+      - name: Build Android Mesa Turnip for ${{ matrix.arch }}
         run: |
-          envsubst <android-turnip-${{ matrix.arch }} >build-crossfile-turnip
+          envsubst <android-turnip-${{ matrix.arch }} > build-crossfile-turnip
           meson setup "build-android-turnip" \
             --cross-file "build-crossfile-turnip" \
             -Dbuildtype=release \
