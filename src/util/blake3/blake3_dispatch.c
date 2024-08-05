@@ -26,6 +26,9 @@ static uint64_t xgetbv(void) {
   return ((uint64_t)edx << 32) | eax;
 #endif
 }
+static void blake3_hash_many_neon(...) {
+  // Implementação vazia para teste
+}
 
 static void cpuid(uint32_t out[4], uint32_t id) {
 #if defined(_MSC_VER)
