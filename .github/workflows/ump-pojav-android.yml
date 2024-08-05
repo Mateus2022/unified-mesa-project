@@ -65,9 +65,8 @@ jobs:
             -Dglx=disabled \
             -Dopengl=true \
             -Dosmesa=true \
-            -Dvulkan-drivers= \
-            -Dgallium-drivers=freedreno,zink,panfrost \
-            -Dfreedreno-kmds=kgsl \
+            -Dvulkan-drivers=panfrost \
+            -Dgallium-drivers=panfrost \
             -Dshared-glapi=false \
             -Dbuildtype=release
             
