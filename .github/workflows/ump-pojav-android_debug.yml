@@ -60,7 +60,6 @@ jobs:
             -Dosmesa=true \
             -Dvulkan-drivers=panfrost \
             -Dgallium-drivers= \
-
             -Dshared-glapi=false \
             -Dbuildtype=debug
           ninja -C "build-android" install
