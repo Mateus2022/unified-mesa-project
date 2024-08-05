@@ -20,7 +20,7 @@ jobs:
       - name: Install build dependencies
         run: |
           sudo apt update
-          sudo apt install -y meson libxrandr-dev libxxf86vm-dev libxcb-*-dev libx11-xcb-dev libxfixes-dev libdrm-dev libx11-dev
+          sudo apt install -y  golang-lukechampine-blake3-dev librust-blake3-dev b3sum meson libxrandr-dev libxxf86vm-dev libxcb-*-dev libx11-xcb-dev libxfixes-dev libdrm-dev libx11-dev
           pip3 install mako
 
           export ANDROID_NDK_HOME="$ANDROID_SDK_ROOT/ndk-bundle"
@@ -66,7 +66,7 @@ jobs:
             -Dopengl=true \
             -Dosmesa=true \
             -Dvulkan-drivers=panfrost \
-            -Dgallium-drivers=panfrost \
+            -Dgallium-drivers= \
             -Dshared-glapi=false \
             -Dbuildtype=release
             
@@ -83,8 +83,7 @@ jobs:
             -Dplatform-sdk-version=33 \
             -Dandroid-stub=true \
             -Dgallium-drivers= \
-            -Dvulkan-drivers=freedreno \
-            -Dfreedreno-kmds=kgsl \
+            -Dvulkan-drivers=panfrost \
             -Dandroid-strict=false \
             -Db_lto=true
             
