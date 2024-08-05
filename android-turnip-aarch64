@@ -11,3 +11,7 @@ system = 'android'
 cpu_family = 'aarch64'
 cpu = 'armv8'
 endian = 'little'
+
+[properties]
+c_args = ['-mfpu=neon', '-march=armv8-a+simd']
+cpp_args = ['-mfpu=neon', '-march=armv8-a+simd']
