@@ -26,9 +26,6 @@ static uint64_t xgetbv(void) {
   return ((uint64_t)edx << 32) | eax;
 #endif
 }
-static void blake3_hash_many_neon(...) {
-  // Implementação vazia para teste
-}
 
 static void cpuid(uint32_t out[4], uint32_t id) {
 #if defined(_MSC_VER)
@@ -235,11 +232,6 @@ void blake3_hash_many(const uint8_t *const *inputs, size_t num_inputs,
 #endif
 #endif
 
-#if BLAKE3_USE_NEON == 1
-  blake3_hash_many_neon(inputs, num_inputs, blocks, key, counter,
-                        increment_counter, flags, flags_start, flags_end, out);
-  return;
-#endif
 
   blake3_hash_many_portable(inputs, num_inputs, blocks, key, counter,
                             increment_counter, flags, flags_start, flags_end,
