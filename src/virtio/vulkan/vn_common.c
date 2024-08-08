@@ -94,15 +94,6 @@ vn_env_init(void)
    }
 }
 
-void
-vn_trace_init(void)
-{
-#ifdef ANDROID
-   atrace_init();
-#else
-   util_cpu_trace_init();
-#endif
-}
 
 void
 vn_log(struct vn_instance *instance, const char *format, ...)
