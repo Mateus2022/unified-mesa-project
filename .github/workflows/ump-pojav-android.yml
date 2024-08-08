@@ -65,7 +65,7 @@ jobs:
             -Dglx=disabled \
             -Dopengl=true \
             -Dosmesa=true \
-            -Dvulkan-drivers=panfrost \
+            -Dvulkan-drivers=panfrost,virtio \
             -Dgallium-drivers= \
             -Dshared-glapi=false \
             -Dbuildtype=release
