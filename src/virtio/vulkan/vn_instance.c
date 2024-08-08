@@ -277,7 +277,7 @@ vn_CreateInstance(const VkInstanceCreateInfo *pCreateInfo,
                   const VkAllocationCallbacks *pAllocator,
                   VkInstance *pInstance)
 {
-   vn_trace_init();
+   
    VN_TRACE_FUNC();
 
    const VkAllocationCallbacks *alloc =
