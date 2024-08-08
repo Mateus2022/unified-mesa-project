@@ -9,6 +9,7 @@
  */
 
 #include "vn_common.h"
+#include <cutils/trace.h>
 
 #include <stdarg.h>
 
